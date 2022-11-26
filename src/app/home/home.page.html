@@ -13,8 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <form [formGroup]="formRegistro" (ngSubmit)="guardarDatos()">
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input formControlName="contraseña"></ion-input>
+    </ion-item>
+    <p class="ion-text-center">
+      <ion-button type="submit">Registrarse</ion-button>
+    </p>  
+  </form>
 </ion-content>

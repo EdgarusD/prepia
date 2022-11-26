@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Server } from 'http';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  formRegistro: FormGroup;
 
-  constructor() {}
-
+  guardarDatos() {
+    this._userService.register(this.formRegistro.value).then(Response=>{
+      console.log(Response)
+      this.router.navigate(['/home'])
+    }).catch(error=>console.log("error"))
+  }
+  constructor( private _userService: ServiceService,  private router: Router ) {
+    this.formRegistro = new FormGroup({
+      email: new FormControl(''),
+      contraseña: new FormControl(''),
+    });
+  }
 }
