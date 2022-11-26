@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Server } from 'http';
 import { ServiceService } from '../services/service.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class HomePage {
   guardarDatos() {
     this._userService.register(this.formRegistro.value).then(Response=>{
       console.log(Response)
-      this.router.navigate(['/home'])
+      this.router.navigate(['/usuario'])
     }).catch(error=>console.log("error"))
   }
   constructor( private _userService: ServiceService,  private router: Router ) {

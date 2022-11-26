@@ -1,0 +1,27 @@
+<ion-content [fullscreen]="true">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title> Blank </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="formLoggin" (ngSubmit)="Entrar()">
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Contraseña:</ion-label>
+      <ion-input formControlName="contraseña"></ion-input>
+    </ion-item>
+    <p class="ion-text-center">
+      <ion-button type="submit">Entrar</ion-button>
+    </p>
+  </form>
+</ion-content>
