@@ -13,11 +13,11 @@ export class HomePage {
 
   guardarDatos() {
     this._userService.register(this.formRegistro.value).then(Response=>{
+      this.router.navigate(['/loggin'])
       console.log(Response)
-      this.router.navigate(['/usuario'])
     }).catch(error=>console.log("error"))
   }
-  constructor( private _userService: ServiceService,  private router: Router ) {
+  constructor( private _userService: ServiceService,  private router: Router) {
     this.formRegistro = new FormGroup({
       email: new FormControl(''),
       contraseña: new FormControl(''),
